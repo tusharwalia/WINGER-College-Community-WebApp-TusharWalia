@@ -3,3 +3,8 @@ body {
   /* text-align: center; */ }
   body #layout-main {
     height: 100%; }
+  body #posts-list-container {
+    height: 60%;
+    width: 40%;
+    border: 1px solid #686262;
+    overflow: scroll; }

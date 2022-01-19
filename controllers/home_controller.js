@@ -13,9 +13,15 @@ module.exports.home = function(req, res){
 // });
 
 //populate the user of each post
+//popute the comments of each post and further populate the user of each comment
 Post.find({})
 .populate('user')
-.populate
+.populate({
+    path: 'comments',
+    populate: {
+        path: 'user'
+    }
+})
 .exec(function(err,posts){
     return res.render('home', {
         title: "Winger | Home",
