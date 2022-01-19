@@ -20,8 +20,25 @@
                 <P>
                     <%= post.content %>
                     <br>
-                    <%= post.user.name %>
+                    <small><%= post.user.name %></small>
                 </P>
+
+                <div class="post_comments">
+                    <% if(locals.user){ %>
+                    
+                        <form action="/comments/create" method="post">
+
+                            <input type="text" name="content" placeholder="add comment">
+
+                            <!-- giving hidden data to each comment so that we know to which post the comment is related -->
+                            <input type="hidden" name="post" value="<%= post._id %>" >
+                            <input type="submit" value="Add Comment">
+                        </form>
+                    
+                    
+                        <% } %>
+                </div>
+
                 </li>
 
                 <% } %>

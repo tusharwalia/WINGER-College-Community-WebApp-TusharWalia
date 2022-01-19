@@ -14,7 +14,7 @@ const postSchema = new mongoose.Schema({
     //storing comment ids of a post in an array in respective post schema
     comments:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'comment'
+        ref: 'Comment'
     }]
 },{
     timestamps:true
