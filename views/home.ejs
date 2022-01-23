@@ -1,79 +1,40 @@
-<h1>
-     Winger / <%= title %>
- </h1>
 
- <section id="feed-posts">
-     <h4>Posts</h4>
-    
-     <% if(locals.user){ %>
-     <form action="/posts/create" id="new-post-form" method="POST">
-         <textarea placeholder="type here .." name="content" cols="30" rows="3" required></textarea>
-         <input type="submit" value="Post">
-     </form>
-     <% } %>
+<link rel="stylesheet" href="/css/home.css">
 
-     <div id="posts-list-container">
-         <ul>
-             <% for(post of posts){ %>
+<div id="home-container">
+    <section id="feed-posts">
+        <h4>Posts</h4>
+        
+        <% if(locals.user){ %>
+        <form action="/posts/create" id="new-post-form" method="POST">
+            <textarea placeholder="type here .." name="content" cols="30" rows="3" required></textarea>
+            <input type="submit" value="Post">
+        </form>
+        <% } %>
 
-                <li> 
-                <P>
-                    <% if(locals.user && locals.user.id == post.user.id){ %>
-                    <small><a href="/posts/destroy/<%= post.id %>">delete</a></small>
+        <div id="posts-list-container">
+            <ul>
+                <% for(post of posts){ %>
+
+                    <%- include('_posts') -%>
+
                     <% } %>
+            </ul>
+        </div>
 
-                    <%= post.content %>
-                    <br>
-                    <small><%= post.user.name %></small>
-                </P>
+    </section>
 
-                <div class="post_comments">
-                    <% if(locals.user){ %>
-                    
-                        <form action="/comments/create" method="post">
+    <section id="user-friends">
 
-                            <input type="text" name="content" placeholder="add comment" required>
+        <h4>Friends</h4>
+        <% for(u of all_users) { %>
 
-                            <!-- giving hidden data to each comment so that we know to which post the comment is related -->
-                            <input type="hidden" name="post" value="<%= post._id %>" >
-                            <input type="submit" value="Add Comment">
-                        </form>
-                    
-                    
-                        <% } %>
+        <p>
+            <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+        </p>
 
-                        <div class="post-comments-list">
-                            <ul id="post-comments-<%= post._id %>">
-                                <% for(comment of post.comments){ %>
 
-                                    <p>
-  
-                                        <!-- && locals.user.id == comment.user.id -->
-                                        <% if (locals.user && (locals.user.id == comment.user.id || locals.user.id == post.user.id) ){ %>
-                                        <small>
-                                            <a href="/comments/destroy/<%= comment.id %>">delete</a>
-                                        </small>
-                                        <!-- <console class="log"><%= post.user.id %></console>
-                                        <console class="log"><%= locals.user.id %></console> -->
-                                    
+        <% } %>
 
-                                        <% } %>
-
-                                    
-                                        <%= comment.content %>
-                                        <br>
-                                        <small><%= comment.user.name %></small>
-                                    </p>
-
-                                    <% } %>
-                            </ul>
-
-                </div>
-
-                </li>
-
-                <% } %>
-         </ul>
-     </div>
-
- </section>
+    </section>
+</div>
