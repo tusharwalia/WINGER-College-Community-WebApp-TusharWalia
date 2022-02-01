@@ -1,10 +1,10 @@
-<li>
+<li id="comment-<%= comment._id %>">
     <p>
 
         <!-- && locals.user.id == comment.user.id -->
         <% if (locals.user && (locals.user.id == comment.user.id || locals.user.id == post.user.id) ){ %>
         <small>
-            <a href="/comments/destroy/<%= comment.id %>">delete</a>
+            <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">delete</a>
         </small>
         <!-- <console class="log"><%= post.user.id %></console>
         <console class="log"><%= locals.user.id %></console> -->

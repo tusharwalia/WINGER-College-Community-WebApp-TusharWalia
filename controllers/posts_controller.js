@@ -11,9 +11,26 @@ module.exports.create = async function(req , res){
         
         );
 
+        if(req.xhr){
+
+            //just populating the name of the user, we dont want to send the password 
+            posts = await posts.populate('user', 'name').execPopulate();
+            
+            return res.status(200).json({
+                data: {
+                    post: posts
+                },
+                message: "post created"
+            })
+        }
+        req.flash('success', 'Post created successfully');
+
         return res.redirect('back');
 
     }catch(err){
+
+        req.flash('error', 'Post creation failed');
+
         console.log('Error',err);
         return;
     }
@@ -32,9 +49,24 @@ module.exports.destroy = async function(req, res){
             post.remove();
 
             await Comment.deleteMany({post: req.params.id});
+
+            if(req.xhr){
+                return res.status(200).json({
+                    data: {
+                        post_id: req.params.id
+                    },
+                    message: "Post Deleted"
+                });
+            }
+
+            req.flash('success', 'Post deleted successfully');
+
             return res.redirect('back');
 
         }else{
+
+            req.flash('error', 'You cannot delete this post');
+
             return res.redirect('back');
         }
 
