@@ -8,6 +8,9 @@
         <% if(locals.user){ %>
         <form action="/posts/create" id="new-post-form" method="POST">
             <textarea placeholder="type here .." name="content" cols="30" rows="3" required></textarea>
+         <br><br> 
+            <input type="file" name="avatar"  placeholder="Post">
+
             <input type="submit" value="Post">
         </form>
         <% } %>

@@ -1,10 +1,14 @@
 <h1>Sign Up</h1>
 
-<form action="/users/create" method="POST">
+<form action="/users/create" method="POST" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <input type="password" name="password" placeholder="Password" required>
     <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+    <br><br>
+    <P>Profile Picture</P>
+    <input type="file" name="avatar"  placeholder="Profile Picture">
+
     <input type="submit" value="Sign Up">
 
 </form>
