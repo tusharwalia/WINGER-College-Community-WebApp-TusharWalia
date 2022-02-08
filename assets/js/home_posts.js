@@ -6,11 +6,15 @@
         
         newPostForm.submit(function(e){
             e.preventDefault();
+            var dataForm = new FormData(newPostForm[0]);
 
             $.ajax({
                 type: 'post',
                 url: '/posts/create',
-                data: newPostForm.serialize(),
+                data:dataForm,
+                processData: false,
+                contentType: false,
+
                 success: function(data){
                     //console.log(data);
                     let newPost = newPostDom(data.data.post);
@@ -43,12 +47,15 @@
     let newPostDom = function(post){
         return $(`<li id="post-${post._id}"> 
                     <P>
-                       
+
+                    <img id="post-pic" src="${post.post_image}" alt="${post.user.name}" width="100" >
+
+                       <br>
                         <small>
                                 <a class="delete-post-button" href="/posts/destroy/${ post._id }">delete</a>
                         </small>
                        
-                    
+                    <br>
                         ${post.content}
                         <br>
                         <small>${ post.user.name }</small>

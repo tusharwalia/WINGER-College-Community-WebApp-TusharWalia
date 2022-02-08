@@ -1,56 +1,130 @@
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 
-module.exports.create = async function(req , res){
- 
-    try{
-        let posts = await Post.create({
-            content: req.body.content,
-            user: req.user._id
-        }
+module.exports.create = async function (req, res) {
+
+    // try {
+
+    //     let posts = await Post.create({
+    //         content: req.body.content,
+    //         user: req.user._id,
+             
+    //     }
         
-        );
+    //     );
+       
+    //     posts = await posts.populate('user', 'name').execPopulate();
+       
+    //     Post.uploadedPostImage(req, res, function (err) {
 
-        if(req.xhr){
+    //         if (err) { console.log('***Multer Error: ', err) }
 
-            //just populating the name of the user, we dont want to send the password 
-            posts = await posts.populate('user', 'name').execPopulate();
-            
-            return res.status(200).json({
-                data: {
-                    post: posts
-                },
-                message: "post created"
-            })
-        }
-        req.flash('success', 'Post created successfully');
+    //         console.log('inside post');
+    //         if (req.file) {
 
-        return res.redirect('back');
+    //             console.log('inside post image');
+    //             // if(posts.post_image){
+    //             //     fs.unlinkSync(path.join(__dirname, '..' , user.avatar));  
+    //             // }
 
-    }catch(err){
 
-        req.flash('error', 'Post creation failed');
+    //             //this is saving path of the uploaded file into the avatar field in the user
 
-        console.log('Error',err);
+    //             posts.post_image = Post.postImagePath + '/' + req.file.filename;
+    //         }
+
+    //         if (req.xhr) {
+
+    //             //just populating the name of the user, we dont want to send the password 
+
+    //             return res.status(200).json({
+    //                 data: {
+    //                     post: posts
+    //                 },
+    //                 message: "post created"
+    //             })
+    //         }
+    //         req.flash('success', 'Post created successfully');
+
+    //         return res.redirect('back');
+    //     })
+    // } catch (err) {
+
+    //     req.flash('error', 'Post creation failed');
+
+    //     console.log('Error', err);
+    //     return;
+    // }
+
+
+    try{
+        let post;
+        await Post.uploadedPostImage(req,res,function(err){
+            if(err){
+                console.log("Error in multer",err);
+
+            }
+            else
+            {
+                let image;
+                if(req.file){
+                    
+                    image=Post.postImagePath + '/' + req.file.filename; 
+                    console.log("***Image*** ",image);
+                }
+                
+                Post.create({
+                    content:req.body.content,
+                    user:req.user._id,
+                    post_image:image
+                },async function(err,newPost){
+                    if(err){
+                        console.log("Error in creating post");
+                        return res.redirect('/');
+                    }
+                    
+                    if(req.xhr){
+                        console.log("Inside xhr");
+                        await newPost.populate('user','name').execPopulate();
+                        return res.status(200).json({
+                            data:{
+                                post:newPost,
+                            },
+                            message:'Post created',
+                        });       
+                    }
+                    console.log("****POST created***");
+                    req.flash('success','Post Created');
+                    return res.redirect('back');
+                    
+                });
+            }
+        });
+        
+        
+
+    }
+    catch(err){
+        req.flash('error','Error in posting. Try Again');
+        console.log("Error",err);
         return;
     }
 
 }
 
-module.exports.destroy = async function(req, res){
+module.exports.destroy = async function (req, res) {
 
-    try{
+    try {
 
         let post = await Post.findById(req.params.id)
 
         // .id means converting the obj into a string
-        if(post.user == req.user.id)
-        {
+        if (post.user == req.user.id) {
             post.remove();
 
-            await Comment.deleteMany({post: req.params.id});
+            await Comment.deleteMany({ post: req.params.id });
 
-            if(req.xhr){
+            if (req.xhr) {
                 return res.status(200).json({
                     data: {
                         post_id: req.params.id
@@ -63,18 +137,18 @@ module.exports.destroy = async function(req, res){
 
             return res.redirect('back');
 
-        }else{
+        } else {
 
             req.flash('error', 'You cannot delete this post');
 
             return res.redirect('back');
         }
 
-    }catch(err){
+    } catch (err) {
 
-        console.log('Error',err);
+        console.log('Error', err);
         return;
     }
 
-    
+
 }

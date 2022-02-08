@@ -6,10 +6,10 @@
         <h4>Posts</h4>
         
         <% if(locals.user){ %>
-        <form action="/posts/create" id="new-post-form" method="POST">
+        <form action="/posts/create" id="new-post-form" method="POST"  enctype="multipart/form-data">
             <textarea placeholder="type here .." name="content" cols="30" rows="3" required></textarea>
          <br><br> 
-            <input type="file" name="avatar"  placeholder="Post">
+            <input type="file" name="post_image"  placeholder="Post">
 
             <input type="submit" value="Post">
         </form>
