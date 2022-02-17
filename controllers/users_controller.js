@@ -142,3 +142,9 @@ module.exports.destroySession = function (req, res) {
 
     return res.redirect('/');
 }
+
+module.exports.forget_email_page=function(req,res){
+    return res.render('forget_email',{
+        title:'Forgot Password'
+    });
+}

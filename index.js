@@ -17,7 +17,7 @@ const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
-
+//app.use(express.bodyParser());
 
 app.use(sassMiddleware({
     src: './assets/scss',
@@ -27,7 +27,7 @@ app.use(sassMiddleware({
     prefix:'/css'
 }));
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: false}));
 
 app.use(cookieParser());
 
