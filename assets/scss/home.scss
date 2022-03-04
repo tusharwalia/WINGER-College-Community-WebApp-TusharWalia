@@ -17,6 +17,17 @@
     #user-friends{
         border-left: 1px solid rgb(156, 152, 152);
         padding: 10px;
+       // border: 1px solid red;
         //height: 100%;
+
+        #friends-list{
+          //  border: 1px solid red;
+            width: 100%;
+        }
+
+        #users-list{
+           // border: 1px solid red;
+            width: 100%;
+        }
     }
 }

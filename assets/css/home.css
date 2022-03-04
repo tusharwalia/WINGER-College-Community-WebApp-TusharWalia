@@ -11,3 +11,7 @@
   #home-container #user-friends {
     border-left: 1px solid #9c9898;
     padding: 10px; }
+    #home-container #user-friends #friends-list {
+      width: 100%; }
+    #home-container #user-friends #users-list {
+      width: 100%; }

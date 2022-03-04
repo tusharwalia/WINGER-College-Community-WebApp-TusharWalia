@@ -67,7 +67,7 @@ module.exports.signUp = function (req, res) {
 
     //if user already signed in redirect to profile page
     if (req.isAuthenticated()) {
-        return res.redirect('/users/profile');
+        return res.redirect('/');
     }
 
 
@@ -82,7 +82,7 @@ module.exports.signIn = function (req, res) {
 
     //if user already signed in , redirect to profile page
     if (req.isAuthenticated()) {
-        return res.redirect('/users/profile');
+        return res.redirect('/');
     }
 
     return res.render('user_sign_in', {
@@ -140,7 +140,7 @@ module.exports.destroySession = function (req, res) {
     req.flash('success', 'You have logged out!');
 
 
-    return res.redirect('/');
+    return res.redirect('/users/sign-in');
 }
 
 module.exports.forget_email_page=function(req,res){

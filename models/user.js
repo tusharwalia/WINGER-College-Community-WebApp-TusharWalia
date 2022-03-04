@@ -19,7 +19,16 @@ const userSchema = new mongoose.Schema({
     },
     avatar:{
         type: String,
-    }
+    },
+
+    //this is an array of friendships 
+    friends: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Friendship'
+        }
+    ]
+
 }, {
     timestamps: true
 });

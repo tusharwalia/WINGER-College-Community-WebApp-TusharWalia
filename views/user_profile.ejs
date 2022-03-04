@@ -16,4 +16,23 @@
             <!-- else show only the profile info -->
             <p><%= profile_user.name %></p>
             <p><%= profile_user.email %></p>
+            
+            <% if(locals.user && profile_user.id!=user.id){%>
+                <% if(locals.user.friends.includes(profile_user.id)){%>
+                    <a href="/users/togg-friend/?id=<%=profile_user.id%>" class="toggle-friend-button">Remove Friend</a>        
+                <%}else{%>
+                    <a href="/users/togg-friend/?id=<%=profile_user.id%>" class="toggle-friend-button">Add Friend</a>        
+                <%}%>
+            <%}%>
+
         <%} %>
+
+
+        <script src="/js/friendship.js"></script>
+
+        <script>
+            $('.toggle-friend-button').each(function(){
+                let self=this;
+                let toggleFriend=new ToggleFriend(self);
+            });
+        </script>
