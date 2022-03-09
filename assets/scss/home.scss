@@ -2,7 +2,7 @@
     display: flex;
 
     #feed-posts{
-        width: 70%;
+        width: 1px;
         padding: 10px;
        // height: 100%;
 
@@ -10,8 +10,9 @@
 
             height: 70vh;
             width: 80%;
-            border: 1px solid rgb(104, 98, 98);
+            border: 1px solid rgb(27, 18, 18);
             overflow: scroll;
+            background-color: rgb(39, 20, 20);
         }
     }
     #user-friends{

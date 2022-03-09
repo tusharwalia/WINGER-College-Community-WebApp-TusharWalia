@@ -1,4 +1,4 @@
-        <link rel="stylesheet" href="/css/user_profile.css">
+        <link rel="stylesheet" href="<%= assetPath('css/user_profile.css') %>">
         
         <img id="profile-pic" src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="100" >
 
@@ -28,7 +28,7 @@
         <%} %>
 
 
-        <script src="/js/friendship.js"></script>
+        <script src="<%= assetPath('js/friendship.js') %>"></script>
 
         <script>
             $('.toggle-friend-button').each(function(){
