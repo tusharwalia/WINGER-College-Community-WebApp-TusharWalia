@@ -1,0 +1,10 @@
+[0mGET / [36m302[0m 35.620 ms - 72[0m
+[0mGET /users/sign-in [36m304[0m 236.269 ms - -[0m
+[0mGET /users/auth/google [36m302[0m 48.005 ms - 0[0m
+[0mGET /users/auth/google/callback?code=4%2F0AX4XfWh1irTpSYLJ1yXyibZgOlbLBoOEjZWyV95R1Wkd-0LQ2RHnJ00_QuhsaUxHZLUg3A&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent [0m-[0m - ms - -[0m
+[0mPOST /users/create-session [0m-[0m - ms - -[0m
+[0mPOST /users/create-session [31m500[0m 10019.976 ms - 472[0m
+[0mPOST /users/create-session [0m-[0m - ms - -[0m
+[0mGET /users/auth/google [36m302[0m 4.182 ms - 0[0m
+[0mGET /users/auth/google/callback?code=4%2F0AX4XfWg3UUAuDh66DpXYFt63-S_xeN9tnza1LjtjFI21hNc1fFnXr2S3lJ0nQte05fra8Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=1&prompt=consent [0m-[0m - ms - -[0m
+[0mPOST /users/create-session [31m500[0m 10010.278 ms - 472[0m
