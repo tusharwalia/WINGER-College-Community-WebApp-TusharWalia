@@ -12,7 +12,12 @@ passport.use(new googleStrategy({
     },
 
     function(accessToken, refreshToken, profile, done){
+        
         // find a user
+        
+        // checking that only thapar domain is allowed to signup
+        if(profile._json.hd === "thapar.edu"){
+
         User.findOne({email: profile.emails[0].value}).exec(function(err, user){
             if (err){console.log('error in google strategy-passport', err); return;}
             console.log(accessToken, refreshToken);
@@ -35,7 +40,12 @@ passport.use(new googleStrategy({
             }
 
         }); 
+    }else{
+
+        done(new Error("Invalid host domain"));
     }
+
+}
 
 
 ));

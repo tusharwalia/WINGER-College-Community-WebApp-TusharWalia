@@ -13,6 +13,8 @@ exports.forgot_password=(link,mail)=>{
         
     },function(err){
         if(err){
+
+            console.log(err);
             console.log("Reset email not sent");
             return;
         }

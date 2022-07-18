@@ -19,10 +19,10 @@ const development ={
         service: 'gmail',
         host: 'smtp.gmail.com',
         port: 587,
-        secure: false,
+        secure: true,
         auth: {
             user: 'rishicr72000',
-            pass: 'ajayshiv123'
+            pass: 'cocorishi@123'
         }
     },
     google_client_id: '459761749362-k5d5rgfmr7fh2p4iq197s7jcpnk6dif1.apps.googleusercontent.com', // e.g. asdfghjkkadhajsghjk.apps.googleusercontent.com

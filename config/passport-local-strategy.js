@@ -12,6 +12,12 @@ passport.use(new LocalStrategy({
     },
     function(req, email, password, done){
         // find a user and establish the identity
+
+        // checking that only thapar domain is allowed to signup
+
+        var domain = email.substring(email.lastIndexOf("@") +1);
+        if(domain === "thapar.edu"){
+        
         User.findOne({email: email}, function(err, user)  {
             if (err){
                 //console.log('Error in finding user --> Passport');
@@ -27,7 +33,14 @@ passport.use(new LocalStrategy({
 
             return done(null, user);
         });
+    }else{
+
+        // done(new Error("Invalid host domain"));
+
+        req.flash('error', 'Invalid Host Domain');
+                return done(null, false);
     }
+}
 
 
 ));

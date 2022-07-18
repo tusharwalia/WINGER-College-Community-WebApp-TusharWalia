@@ -6,10 +6,11 @@ const rev = require('gulp-rev');
 const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
 const del = require('del');
-
+console.log("minifying css.. ************");
 
 gulp.task('css' , function(done){
-    console.log("minifying css...");
+
+    console.log("minifying css.. ************");
     gulp.src('./assets/sass/**/*.scss')
     .pipe(sass())
     .pipe(cssnano())

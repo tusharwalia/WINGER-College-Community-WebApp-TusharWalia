@@ -74,7 +74,11 @@ module.exports.create = async function (req, res) {
                     console.log("***Image*** ",image);
                 }
                 
+                console.log(req.body.content);
+
                 Post.create({
+
+                    
                     content:req.body.content,
                     user:req.user._id,
                     post_image:image

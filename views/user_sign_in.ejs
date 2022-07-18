@@ -1,4 +1,8 @@
-<h1>Sign In</h1>
+<link rel="stylesheet" href="<%= assetPath('css/sign_in.css') %>">
+
+
+<div id="sign-in">
+<h1 class="row">Sign In</h1>
 
 <form action="/users/create-session" method="POST">
     <input type="email" name="email" placeholder="Email"  required>
@@ -14,3 +18,4 @@
 <p class="forgot">
     <a href="/users/forget-password">Forgot Password?</a>
 </p>
+</div>

@@ -92,7 +92,18 @@ module.exports.signIn = function (req, res) {
 
 // get the sign up data
 module.exports.create = function (req, res) {
+    
+    // console.log(req.body.password);
+
+    // var domain = req.body.email.substring(req.body.email.lastIndexOf("@") +1);
+    // if(domain === "thapar.edu"){
+
+        console.log(req.body.password);
+
     if (req.body.password != req.body.confirm_password) {
+        
+        req.flash('Passwords dont match');
+        
         return res.redirect('back');
     }
 
@@ -123,7 +134,15 @@ module.exports.create = function (req, res) {
         
             });
         });
-}
+
+     }
+//else{
+
+//         req.flash('error', 'Invalid Host Domain');
+//         return res.redirect('back');
+
+//     }
+// }
 
 
 // sign in and create a session for the user
