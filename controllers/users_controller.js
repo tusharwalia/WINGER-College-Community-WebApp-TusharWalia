@@ -154,12 +154,18 @@ module.exports.createSession = function (req, res) {
 }
 
 module.exports.destroySession = function (req, res) {
-    req.logout();
+    
+    // req.logout();
+    // req.flash('success', 'You have logged out!');
+    // return res.redirect('/users/sign-in');
 
-    req.flash('success', 'You have logged out!');
+    req.logout(function(err) {
+        if (err) { return next(err); }
 
+        req.flash('success', 'You have logged out!');
+        res.redirect('/users/sign-in');
+      });
 
-    return res.redirect('/users/sign-in');
 }
 
 module.exports.forget_email_page=function(req,res){

@@ -1,18 +1,41 @@
-<h1>Sign Up</h1>
+<link rel="stylesheet" href="<%= assetPath('css/sign_up.css') %>">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-<form action="/users/create" method="POST" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+
+
+
+<div id="container">
+
+    <h1 class="row justify-content-center">Sign Up</h1>
+    <form class="row mt-5 justify-content-center" action="/users/create" method="POST" enctype="multipart/form-data">
+    <input class="row" style="width: 80%;" type="text" name="name" placeholder="Your Name" required>
+    <input class="row mt-2" style="width: 80%;" type="email" name="email" placeholder="Your Email" required>
+    <input class="row mt-2" style="width: 80%;" type="password" name="password" placeholder="Password" required>
+    <input class="row mt-2" style="width: 80%;" type="password" name="confirm_password" placeholder="Confirm Password" required>
     <br><br>
-    <P>Profile Picture</P>
-    <input type="file" name="avatar"  placeholder="Profile Picture">
 
-    <input type="submit" value="Sign Up">
+    <P class="row mt-3 text-center justify-content-center">Add your profile picture below</P>
+    <input class="row mt-2 text-center justify-content-center" type="file" name="avatar"  placeholder="Profile Picture">
+
+    <input class="row mt-2 justify-content-center" style="width: 80%;" type="submit" value="Sign Up">
 
 </form>
 
 <p>
     <a href="/users/auth/google">Google Sign in/Sign up</a>
 </p>
+
+</div>

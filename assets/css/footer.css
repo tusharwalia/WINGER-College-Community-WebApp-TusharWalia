@@ -1,4 +1,8 @@
 #layout-footer {
+  position: fixed;
+  bottom: 0px;
+  font-size: 1.3rem;
+  width: 100%;
   color: white;
   background: grey;
   padding: 5px 10px;

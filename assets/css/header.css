@@ -1,17 +1,24 @@
 #layout-header nav {
   display: flex;
+  align-items: center;
+  height: 3vw;
   justify-content: space-between;
   padding: 0 10px;
   background: #310344;
   color: white;
+  vertical-align: middle;
   box-shadow: 1px 1px 1px 1px lightgrey; }
   #layout-header nav .mini-logo p {
-    margin: 5px;
-    font-size: 1.4rem;
-    font-weight: bold; }
+    margin: 5% 0px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+  }
   #layout-header nav .auth-links ul {
-    margin: 5% 5px;
-    display: flex; }
+    margin: 5% 0px;
+    font-size: 1.3rem;
+    display: flex; 
+  }
     #layout-header nav .auth-links ul li {
       margin-right: 25px; }
   #layout-header nav a {
