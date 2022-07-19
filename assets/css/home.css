@@ -6,9 +6,9 @@
     #home-container #feed-posts #posts-list-container {
       height: 70vh;
       width: 80%;
-      border: 1px solid #686262;
+      border: 1px solid #ff44b1;
       overflow: scroll;
-    background-color: #8a9af0; }
+    background-color: #e97ed2; }
   #home-container #user-friends {
     border-left: 1px solid #9c9898;
     padding: 10px; }

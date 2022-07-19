@@ -2,8 +2,13 @@
   "css/chat_box.css": "css/chat_box-3aa9f1fb21.css",
   "css/footer.css": "css/footer-80b8801692.css",
   "css/header.css": "css/header-08538679d8.css",
-  "css/home.css": "css/home-47d8cedd1f.css",
+  "css/home.css": "css/home-df6b84cf15.css",
   "css/layout.css": "css/layout-5f54bd59b6.css",
   "css/sign_in.css": "css/sign_in-64a8d0aebd.css",
-  "css/user_profile.css": "css/user_profile-af9cc02dc4.css"
+  "css/user_profile.css": "css/user_profile-af9cc02dc4.css",
+  "js/chat_engine.js": "js/chat_engine-2993f4b8f1.js",
+  "js/friendship.js": "js/friendship-34fe752ad5.js",
+  "js/home_post_comments.js": "js/home_post_comments-129033b3bf.js",
+  "js/home_posts.js": "js/home_posts-153b4cccdf.js",
+  "js/toggle_likes.js": "js/toggle_likes-e60e84351e.js"
 }

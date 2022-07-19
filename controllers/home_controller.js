@@ -25,7 +25,7 @@ module.exports.home = async function(req, res){
         .populate('likes');
 
         let currUser;
-        console.log("#######",req.user);
+        // console.log("#######",req.user);
 
         currUser = await User.findById(req.user._id)
         .populate({
