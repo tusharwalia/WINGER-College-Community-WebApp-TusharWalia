@@ -33,8 +33,10 @@ a:focus {
 ----------------------------------------------------- */
 
 #sidebar {
+  margin-top: 47px;
     min-width: 350px;
     max-width: 350px;
+    height: 625px;
     background: #7386D5;
     color: #fff;
   }

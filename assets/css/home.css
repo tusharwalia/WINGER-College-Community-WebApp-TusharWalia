@@ -1,78 +1,89 @@
 #home-container {
-  display: flex; }
+  display: flex;
+  background: rgb(48, 47, 47);
+ }
   #home-container #feed-posts {
     width: 70%;
-    padding-left: 10px; }
+    padding-left: 10px;
+    margin-top: 50px;
+  }
     #home-container #feed-posts #posts-list-container {
       height: 70vh;
       width: 80%;
-      border: 1px solid #ff44b1;
+      /* border: 1px solid #ff44b1; */
       overflow: scroll;
-    background-color: #e97ed2; }
+    background-color: #b6b3b5; }
   #home-container #user-friends {
 
     align-content: center;
     margin-left: 2%;
     margin-right: 2%;
+    margin-top: 47px;
     border: 1px solid #4e4d4d;
     background-color: rgb(156, 154, 154);
     width: 15%;
+    height: 625px;
     padding: 10px; }
-    #home-container #user-friends #friends-list {
+    
+    #friends-list {
       border: 1px solid black;
       text-align: left;
       margin-left: auto;
       margin-right: auto;
       margin-top: 20px;
       background: blanchedalmond;
-      height: 42%;
-      width: 90%;
-      overflow: scroll;
-      padding: 5px;
+      height: 45%;
+      width: 95%;
+     
+      padding: 3px;
     
     }
-    #home-container #user-friends #friends-list::-webkit-scrollbar {
+    #friends-list-box::-webkit-scrollbar {
       display: none;
     }
+    #friends-list-box{
+      width: 100%;
+      height: 83%;
+      /* border: 1px solid red; */
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5px;
+      overflow: scroll;
+    }
 
-      #home-container #user-friends #friends-list #friend-list-heading{
+      #friend-list-heading{
        text-align: center;
-       margin-bottom: 20px;
+       margin-bottom: 15px;
        margin-top: 10px;
       }
-      #home-container #user-friends #friends-list #friend-block{
+      #friend-block{
         margin-left: 5%;
         background: rgb(179, 180, 177);
         width: 90%;
         height: 30px;
-        
+        display: flex;
+        align-items: center;
+        padding-left: 3px;
+        padding-top: 4px;
         box-shadow: 2px 2px 2px 2px rgba(105, 104, 104, 0.4);
         border-radius: 4px;
 
       }
-      #home-container #user-friends #friends-list #friend-block:hover {
-        transform: scale(1.2);
+      #friend-block:hover {
+        transform: scale(1.1);
         box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
         -webkit-transition: transform 0.3s ease-in-out;
       }
-      #home-container #user-friends #friends-list #friend-block a{
+      #friend-block a{
 
         color: cornsilk;
         text-decoration: none;
 
       }
-      #home-container #user-friends #friends-list #friend-pic{
+      #friend-pic{
         height: 30px;
         margin-right: 5px;
         border-radius: 50%;
       }
-    #home-container #user-friends #users-list {
-      border: 1px solid black;
-      background: blanchedalmond;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 3vh;
-      height: 42%;
-      text-align: center;
-      width: 90%; }
+    
       

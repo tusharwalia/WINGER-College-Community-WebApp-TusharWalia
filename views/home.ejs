@@ -69,7 +69,7 @@
      <div id="friends-list">    
     <h4 id="friend-list-heading">Friends (<%= currUser.friends.length %>)</h4>
 
-   
+     <div id="friends-list-box">
         <% for(friendx of currUser.friends){%>
             <p id="friend-block">
             <a href="users/profile/<%=friendx.to.id%>">
@@ -85,21 +85,29 @@
                 <a href="users/profile/<%=friendx.to.id%>"><%= friendx.to.name %></a>
             </p> -->
         <%}%>
+    </div>
     
     </div>
 
-        <div id="users-list">
+        <div id="friends-list">
 
-            <h4>Users</h4>
+            <h4 id="friend-list-heading">Users</h4>
 
+            <div id="friends-list-box">
             <% for(u of all_users) { %>
 
-                <p>
-                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+                <p id="friend-block">
+                    <a href="/users/profile/<%= u.id %>">
+
+                        <img src="<%= u.avatar %>" id="friend-pic">
+                        <span class="leaderboard__name"><%= u.name %></span>
+                    
+                    </a>
                 </p>
 
 
             <% } %>
+        </div>
 
         </div>
 

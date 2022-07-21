@@ -4,8 +4,9 @@
   font-size: 1.3rem;
   width: 100%;
   color: white;
-  background: grey;
+  background: rgb(89, 16, 95);
   padding: 5px 10px;
+  margin-top: 50px;
   display: flex;
   justify-content: flex-start; }
   #layout-footer a {
