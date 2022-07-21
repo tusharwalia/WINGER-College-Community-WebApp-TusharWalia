@@ -2,7 +2,7 @@
   display: flex; }
   #home-container #feed-posts {
     width: 70%;
-    padding: 10px; }
+    padding-left: 10px; }
     #home-container #feed-posts #posts-list-container {
       height: 70vh;
       width: 80%;
@@ -10,9 +10,69 @@
       overflow: scroll;
     background-color: #e97ed2; }
   #home-container #user-friends {
-    border-left: 1px solid #9c9898;
+
+    align-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 1px solid #4e4d4d;
+    background-color: rgb(156, 154, 154);
+    width: 15%;
     padding: 10px; }
     #home-container #user-friends #friends-list {
-      width: 100%; }
+      border: 1px solid black;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      background: blanchedalmond;
+      height: 42%;
+      width: 90%;
+      overflow: scroll;
+      padding: 5px;
+    
+    }
+    #home-container #user-friends #friends-list::-webkit-scrollbar {
+      display: none;
+    }
+
+      #home-container #user-friends #friends-list #friend-list-heading{
+       text-align: center;
+       margin-bottom: 20px;
+       margin-top: 10px;
+      }
+      #home-container #user-friends #friends-list #friend-block{
+        margin-left: 5%;
+        background: rgb(179, 180, 177);
+        width: 90%;
+        height: 30px;
+        
+        box-shadow: 2px 2px 2px 2px rgba(105, 104, 104, 0.4);
+        border-radius: 4px;
+
+      }
+      #home-container #user-friends #friends-list #friend-block:hover {
+        transform: scale(1.2);
+        box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+        -webkit-transition: transform 0.3s ease-in-out;
+      }
+      #home-container #user-friends #friends-list #friend-block a{
+
+        color: cornsilk;
+        text-decoration: none;
+
+      }
+      #home-container #user-friends #friends-list #friend-pic{
+        height: 30px;
+        margin-right: 5px;
+        border-radius: 50%;
+      }
     #home-container #user-friends #users-list {
-      width: 100%; }
+      border: 1px solid black;
+      background: blanchedalmond;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3vh;
+      height: 42%;
+      text-align: center;
+      width: 90%; }
+      

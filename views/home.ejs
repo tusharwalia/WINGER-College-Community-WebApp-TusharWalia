@@ -19,6 +19,9 @@
 
 
 <div id="home-container">
+
+    
+
     <section id="feed-posts">
         <h4>Posts</h4>
         
@@ -62,18 +65,28 @@
         <% } %>
          -->
 
-    <h4>Friends</h4>
-    
+
+     <div id="friends-list">    
+    <h4 id="friend-list-heading">Friends (<%= currUser.friends.length %>)</h4>
+
    
-    <%= currUser.friends.length %>
-                    
         <% for(friendx of currUser.friends){%>
-            <p>
+            <p id="friend-block">
+            <a href="users/profile/<%=friendx.to.id%>">
+            
+                <img src="<%= friendx.to.avatar %>" id="friend-pic">
+                <span class="leaderboard__name"><%= friendx.to.name %></span>
+                
+                              
+            </a>
+        </p>
+            
+            <!-- <p>
                 <a href="users/profile/<%=friendx.to.id%>"><%= friendx.to.name %></a>
-            </p>
+            </p> -->
         <%}%>
     
-    
+    </div>
 
         <div id="users-list">
 
@@ -93,6 +106,7 @@
     </section>
 
     <%- include('_chat_box') -%>
+    
 </div>
 
 <script src="<%= assetPath('js/home_post_comments.js') %>"></script>

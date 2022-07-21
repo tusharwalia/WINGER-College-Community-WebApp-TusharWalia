@@ -1,23 +1,40 @@
 <link rel="stylesheet" href="<%= assetPath('css/chat_box.css') %>">
+<script src="<%= assetPath('js/chat.js') %>"></script>
 
 <% if (locals.user){ %>
-	<div id="user-chat-box">
-		<ul id="chat-messages-list">
-			<li class="other-message">
-				<span>Other Message</span>
-			</li>
-			<li class="self-message">
-				<span>
-					Self Message
-				</span>
-				
-			</li>
 
-		</ul>
-		<div id="chat-message-input-container">
-			<input id="chat-message-input" placeholder="Type message here">
-			<button id="send-message">Send</button>
+
+	<!-- Sidebar  -->
+	<nav id="sidebar">
+		<div class="sidebar-header">
+			<h3>Chit-Chat</h3>
 		</div>
 
-	</div>
+		<ul class="list-unstyled components">
+			<p>Dummy Heading</p>
+
+			<div id="user-chat-box">
+				<ul id="chat-messages-list">
+					<li class="other-message">
+						<span>Other Message</span>
+					</li>
+					<li class="self-message">
+						<span>
+							Self Message
+						</span>
+						
+					</li>
+		
+				</ul>
+				<div id="chat-message-input-container">
+					<input id="chat-message-input" placeholder="Type message here">
+					<button id="send-message">Send</button>
+				</div>
+		
+			</div>
+			
+	</nav>
+
+	
+
 <% } %>
