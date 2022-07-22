@@ -33,12 +33,13 @@ a:focus {
 ----------------------------------------------------- */
 
 #sidebar {
-  margin-top: 47px;
-    min-width: 350px;
-    max-width: 350px;
+  /* margin-top: 47px; */
+    min-width: 58%;
+    max-width: 58%;
     height: 625px;
     background: #7386D5;
     color: #fff;
+    margin-left: 12px;
   }
 
 #sidebar .sidebar-header {
