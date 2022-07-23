@@ -1,13 +1,14 @@
 #layout-header nav {
   position: fixed;
   top: 0px;
+  z-index: 2;
   width: 100%;
   display: flex;
   align-items: center;
   height: 3vw;
   justify-content: space-between;
   padding: 0 10px;
-  background: #310344;
+  background: #0b0814;
   color: white;
   vertical-align: middle;
   box-shadow: 1px 1px 1px 1px lightgrey; }

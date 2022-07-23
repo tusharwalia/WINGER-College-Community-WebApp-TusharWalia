@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const multer = require('multer');
+const path = require('path');
 
 const commentSchema = new mongoose.Schema({
     content:{

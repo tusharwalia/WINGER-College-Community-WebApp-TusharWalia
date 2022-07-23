@@ -142,7 +142,7 @@ gulp.task('build', gulp.series('clean:assets', 'css', 'js', 'images'), function(
 // Detect changes in CSS
 
 gulp.task('watch', function() {
-    gulp.watch('./assets/css/*.css', gulp.series('build'));
+    gulp.watch('./assets/**/*.css', gulp.series('build'));
     gulp.watch('./assets/**/*.js', gulp.series('build'));
 
     gulp.watch('./assets/**/*.+(png|jpg|gif|svg|jpeg)', gulp.series('build'));

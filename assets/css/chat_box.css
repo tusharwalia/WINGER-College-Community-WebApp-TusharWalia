@@ -37,14 +37,15 @@ a:focus {
     min-width: 58%;
     max-width: 58%;
     height: 625px;
-    background: #7386D5;
+    background: #0e111b;
     color: #fff;
     margin-left: 12px;
+    box-shadow: 5px 5px 10px 5px black;
   }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #0c0e18;
 }
 
 #sidebar ul.components {

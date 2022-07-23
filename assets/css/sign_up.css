@@ -1,13 +1,75 @@
+#signup-body{
+    
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: rgb(19, 18, 26);
+    padding-top: 25vh;
+    
+}
+#left-section{
+    width: 60%;
+    margin-left: 0px;
+}
+
 #container {
    
     font-size: 0.8vw;
-    height: 60%;
-    width: 20%;
-    border: 1px solid #000000;
-
-    align-items: center;
-    margin-top: 10vh;
-    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:lighter;
+    padding-top: 30px;
+    height: 70%;
+    width: 35%;
+    /* border: 1px solid #000000; */
+    background-color: rgb(10, 10, 17);
+    box-shadow: 5px 5px 20px 10px rgba(3, 3, 3, 0.47);
+    color: white;
     margin-left: auto;
     margin-right: auto;
+}
+#img-button{
+
+    margin-left: 175px;
+   
+}
+#gauth{
+
+    margin-left: 95px;
+}
+#right-section{
+    width: 30%;
+    height: 70px;
+    margin-right: 100px;
+    /* border: 1px solid red; */
+    color: white;
+    border-left:2px solid rgb(75, 75, 75);
+    border-top:2px solid rgb(75, 75, 75);
+    box-shadow: 5px 5px 20px 5px black;
+    padding-left: 30px ;
+    padding-top: 10px;
+    /* display: flex;
+    flex-direction: column; */
+
+}
+#one{
+    font-size: 30px;
+    font-weight: lighter;
+    /* font-stretch: expanded; */
+    letter-spacing: 4px;
+    /* border: 1px solid red; */
+}
+#two{
+    font-size: 100px;
+    font-family: Arial, sans-serif;
+    /* border: 1px solid red; */
+    font-weight:bold;
+    color: rgb(207, 207, 207);
+    margin-top: 10px;
+    
+}
+#three{
+    font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 3px;
 }
