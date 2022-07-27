@@ -40,11 +40,11 @@
     
         <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="post">
 
-            <input type="text" name="content" placeholder="add comment" required>
+            <input id="comment-type-box" type="text" name="content" placeholder="add your comment here" required>
 
             <!-- giving hidden data to each comment so that we know to which post the comment is related -->
             <input type="hidden" name="post" value="<%= post._id %>" >
-            <input type="submit" value="Add Comment">
+            <input style="color: rgb(255, 255, 255);background-image: linear-gradient(rgb(30, 14, 37), rgb(58, 26, 68));" type="submit" value="Add Comment">
         </form>
     
     

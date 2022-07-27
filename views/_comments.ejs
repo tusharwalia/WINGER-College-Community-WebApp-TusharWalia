@@ -1,28 +1,34 @@
+<link rel="stylesheet" href="<%= assetPath('css/comment.css') %>">
+
 <li id="comment-<%= comment._id %>">
-    <p>
-
-        <!-- && locals.user.id == comment.user.id -->
-        <% if (locals.user && (locals.user.id == comment.user.id || locals.user.id == post.user.id) ){ %>
-        <small>
-            <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">delete</a>
-        </small>
-        <!-- <console class="log"><%= post.user.id %></console>
-        <console class="log"><%= locals.user.id %></console> -->
-    
-
-        <% } %>
+    <p id="single-comment-container">
 
         <%= comment.content %>
-        
+
+        <!-- && locals.user.id == comment.user.id -->
+        <% if (locals.user && (locals.user.id == comment.user || locals.user.id == post.user.id) ){ %>
+        <small>
+            <a id="delete-comment" class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">delete</a>
+        </small>
+        <!-- <console class="log"><%= post.user.id %>******</console>
+        <console class="log"><%= locals.user.id %></console>
+     -->
+
+     
+            
+        <% } %>
+
             <%= comment.user.name %>
 
         <small>
             <% if (locals.user) { %>
-                <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                <a id="like-on-comments" class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
                     <%= comment.likes.length %> Likes
                 </a>
+
+                <!-- <console class="log"><%= comment.user %></console> -->
                 <% }else{ %>
-                    <%= comment.likes.length %> Likes
+                    <div id="like-on-comments"><%= comment.likes.length %> Likes</div>
                 <% } %>
         </small>
     </p>

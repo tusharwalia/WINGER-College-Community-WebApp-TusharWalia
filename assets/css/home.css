@@ -1,3 +1,13 @@
+#trending-heading{
+  font-size: 2.5vw;
+   color: rgb(185, 185, 185);
+   font-family:Arial, Helvetica, sans-serif;
+   margin-left: 55px;
+   font-weight:lighter;
+   margin-bottom: -2px;
+   margin-top: 30px;
+}
+
 #trending{
   width: 800px;
   margin-top: 20px;
@@ -9,12 +19,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  box-shadow: 5px 5px 20px 5px rgb(15, 15, 15);
+  box-shadow: 0px 0px 20px 5px rgb(0, 0, 0);
   /* padding: 30px 10px; */
   /* border: 5px solid red; */
   font-family: 'DM Sans', sans-serif;
   transition: .4s ease-in;
-  background-color: #0b0b14;
+  background-color: #16161d;
 }
 #trending .blue {
   background-color: #428aa6;
@@ -27,8 +37,8 @@ input[type=radio] {
 .card {
   /* position: absolute; */
  
-  width: 280px;
-  height: 200px;
+  width: 340px;
+  height: 220px;
   left: 0;
   right: 0;
   background: red;
@@ -41,17 +51,17 @@ input[type=radio] {
 .cards .l1{
   background: rgb(0, 0, 0);
   /* border: 2px solid red; */
-  top: 0px;
+  top: -20px;
 }
 .cards .l3{
   background: rgb(0, 0, 0);
   /* border: 2px solid red; */
-  top: -420px;
+  top: -480px;
 }
 .cards .l2{
   background: rgb(0, 0, 0);
   /* border: 2px solid red; */
-  top: -210px;
+  top: -250px;
 }
 
 .container-trending {
@@ -81,12 +91,12 @@ input[type=radio] {
 }
 #item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
   transform: translatex(-70%) scale(.8);
-  opacity: .4;
+  opacity: .2;
   z-index: 0;
 }
 #item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
   transform: translatex(70%) scale(.8);
-  opacity: .4;
+  opacity: .2;
   z-index: 0;
 }
 
@@ -94,19 +104,21 @@ input[type=radio] {
   transform: translatex(0) scale(1);
   opacity: 1;
   z-index: 1;
-  /* box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);  */
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.47); 
 }
 
-#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 img {
+/* #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 img {
   box-shadow: 5px 5px 20px 5px rgba(3, 3, 3, 0.47);
-}
+} */
 
 .player {
-  background-color: #fff;
+  background-image: linear-gradient(rgb(30, 14, 37), rgb(58, 26, 68));
   border-radius: 8px;
   min-width: 320px;
+  position: relative;
   padding: 16px 10px;
   margin-top: 30px;
+  box-shadow: 1px 1px 30px 1px black;
 }
 
 .upper-part {
@@ -127,9 +139,16 @@ input[type=radio] {
 }
 
 .song-info .title {
-  color: #403d40;
+  color: #8d8d8d;
   font-size: 14px;
   line-height: 24px;
+}
+
+
+
+#movie-description{
+  color: #6d6d6d;
+  margin-top: 2px;
 }
 
 .sub-line {
@@ -142,6 +161,7 @@ input[type=radio] {
   font-size: 12px;
   line-height: 16px;
   color: #c6c5c6;
+  margin-top: -3px;
 }
 
 .time {
@@ -167,11 +187,11 @@ input[type=radio] {
 }
 
 #item-2:checked ~ .player #test  {
-  transform: translateY(-60px);
+  transform: translateY(-75px);
 }
 
 #item-3:checked ~ .player #test  {
-  transform: translateY(-120px);
+  transform: translateY(-150px);
 }
 
 
@@ -191,7 +211,7 @@ input[type=radio] {
   display: flex;
   flex-direction: column;
   width: 60%;
-
+  background-color:#0b0b14;
 }
 
  #right-section{
@@ -206,15 +226,15 @@ input[type=radio] {
  }
 
  #post-heading{
-   font-size: 3vw;
-   color: rgba(61, 60, 60, 0.4);
+   font-size: 2.5vw;
+   color: rgb(185, 185, 185);
    font-family:Arial, Helvetica, sans-serif;
    margin-left: 5px;
    font-weight:lighter;
    margin-bottom: 30px;
  }
    #feed-posts {
-     border: 1px solid black;
+     /* border: 1px solid rgb(202, 202, 202); */
     width: 90%;
     height: fit-content;
     padding-left: 5px;
@@ -228,16 +248,17 @@ input[type=radio] {
     width: 700px;
     /* height:200px; */
     margin-bottom: 10px;
-    border: 1px solid rgb(118, 216, 255);
+    /* border: 1px solid rgb(118, 216, 255); */
     
 }
 #create-post-section{
   vertical-align: middle;
   width: 90%;
   height: 150px;
-  background: rgba(204, 203, 203, 0.4);
+  background: #16161d;
+  margin-left: 5px;
   margin-bottom: 30px;
-  box-shadow: 2px 2px 10px 2px rgba(126, 125, 125, 0.47);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.47);
 
 }
 
@@ -245,6 +266,7 @@ input[type=radio] {
   display: flex;
   margin-left: 5px;
   /* border: 1px solid red; */
+  
   width: 95% ;
   height: 30px;
   margin-left: auto;
@@ -253,14 +275,15 @@ input[type=radio] {
 }
 #pot-button{
   width: 12%;
-  background-color: rgb(156, 156, 156);
+  background-image: linear-gradient(rgb(30, 14, 37), rgb(58, 26, 68));
+  color: #c6c5c6;
 }
   #text-area{
     width: 95%;
     margin-top: 20px;
     margin-left: 19px;
     margin-right: auto;
-    background-color: rgb(48, 47, 47);
+    background-color: rgb(0, 0, 0);
     text-decoration: white;
     color: white;
     font-size: 0.8vw;
@@ -270,25 +293,42 @@ input[type=radio] {
     color:    rgb(202, 202, 202);
     font-size: 0.8vw;
  }
+
+
+#single-comment-container{
+  /* border: 1px solid red; */
+  min-height: 30%;
+  height: fit-content;
+  background-color: rgb(22, 20, 34) ;
+  margin-left: -15px;
+  font-size: 0.8vw;
+  justify-content: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  color: #c6c5c6;
+}
+
+
   #user-friends {
 
     align-content: center;
     margin-left: 2%;
     margin-right: 2%;
     /* margin-top: 47px; */
-    box-shadow: 5px 5px 10px 5px black;
+    box-shadow: 0px 0px 10px 5px black;
     background-color: #0b0b14;
     width: 38%;
     height: 625px;
     padding: 10px; }
     
     #friends-list {
-      border: 1px solid black;
+      /* border: 1px solid black; */
       text-align: left;
       margin-left: auto;
       margin-right: auto;
       margin-top: 20px;
-      background: rgb(161, 161, 161);
+      background: #16161d;
       height: 45%;
       width: 95%;
      
@@ -312,6 +352,7 @@ input[type=radio] {
        text-align: center;
        margin-bottom: 15px;
        margin-top: 10px;
+       color: rgb(212, 212, 212);
       }
       #friend-block{
         margin-left: 5%;
@@ -322,7 +363,7 @@ input[type=radio] {
         align-items: center;
         padding-left: 3px;
         padding-top: 1px;
-        box-shadow: 2px 2px 2px 2px rgba(105, 104, 104, 0.4);
+        box-shadow: 0px 0px 10px 2px rgb(14, 14, 14);
         border-radius: 4px;
 
       }

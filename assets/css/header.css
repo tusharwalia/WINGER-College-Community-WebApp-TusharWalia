@@ -11,7 +11,7 @@
   background: #0b0814;
   color: white;
   vertical-align: middle;
-  box-shadow: 1px 1px 1px 1px lightgrey; }
+  box-shadow: 1px 1px 10px 2px rgb(47, 2, 51); }
   #layout-header nav .mini-logo p {
     margin: 5% 0px;
     font-size: 1.8rem;

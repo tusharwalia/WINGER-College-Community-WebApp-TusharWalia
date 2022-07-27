@@ -15,35 +15,55 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 
+        <div id="container">
+
+        <div id="left-section">
         
-        <img id="profile-pic" src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="100" >
+            <img id="profile-pic" src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="100" >
+        
+        </div>
 
 
+        <div id="right-section">
+            <!-- <p id="heading">
+                Update your personal information here
+            </p> -->
         <% if(user.id == profile_user.id){ %>
+
+            <p id="heading">
+                Update your personal information here
+            </p>
             <!-- if user matches then show the form -->
+            <div id="update-container">
             <form action="/users/update/<%= profile_user.id %>" method="POST" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
-                <input type="email" name="email" placeholder="Your Email" value="<%= profile_user.email %>" required>
-                <input type="file" name="avatar"  placeholder="Profile Picture">
-                <input type="submit"  value="Update">
+                <input id="update" type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required><br>
+                <input id="update" type="email" name="email" placeholder="Your Email" value="<%= profile_user.email %>" required>
+                <input id="update" type="file" name="avatar"  placeholder="Profile Picture">
+                <input id="submit-button" type="submit"  value="Update">
             </form>
+           </div>
             
-        <%}else{%>    
+        <%}else{%>
+            
+            <p id="heading">
+                <%= profile_user.name %>'s Profile
+            </p>
             <!-- else show only the profile info -->
-            <p><%= profile_user.name %></p>
-            <p><%= profile_user.email %></p>
+            <p id="info"><%= profile_user.name %></p>
+            <p id="info"><%= profile_user.email %></p>
             
             <% if(locals.user && profile_user.id!=user.id){%>
                 <% if(locals.user.friends.includes(profile_user.id)){%>
-                    <a href="/users/togg-friend/?id=<%=profile_user.id%>" class="toggle-friend-button">Remove Friend</a>        
+                    <a id="add-button" href="/users/togg-friend/?id=<%=profile_user.id%>" class="toggle-friend-button">Remove Friend</a>        
                 <%}else{%>
-                    <a href="/users/togg-friend/?id=<%=profile_user.id%>" class="toggle-friend-button">Add Friend</a>        
+                    <a id="add-button" href="/users/togg-friend/?id=<%=profile_user.id%>" class="toggle-friend-button">Add Friend</a>        
                 <%}%>
             <%}%>
 
         <%} %>
 
 
+    </div>
         <script src="<%= assetPath('js/friendship.js') %>"></script>
 
         <script>
@@ -52,3 +72,4 @@
                 let toggleFriend=new ToggleFriend(self);
             });
         </script>
+        </div>
