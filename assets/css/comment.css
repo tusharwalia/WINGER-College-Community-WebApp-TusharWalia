@@ -1,0 +1,9 @@
+#like-on-comments{
+    float: right;
+    margin-right: 10px;
+    color: rgb(214, 214, 214);
+}
+#delete-comment{
+    float: right;
+    margin-right: 10px;
+}
