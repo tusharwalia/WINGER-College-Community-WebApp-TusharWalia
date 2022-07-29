@@ -38,7 +38,7 @@ a:focus {
     max-width: 58%;
     height: 625px;
     background: #0e111b;
-    color: #fff;
+    color: rgb(255, 255, 255);
     margin-left: 12px;
     box-shadow: 5px 5px 10px 5px black;
   }
