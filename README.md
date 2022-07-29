@@ -14,6 +14,10 @@ Winger is a social media platform that offers a unique experience offering a com
 * Fully functional MongoDB database with restrictions and validation.
 * Sensitive data such as passwords is encrypted before adding to database.
 * Uses GULP for minification of frontend files to boost performance.
+* Only students having college domain can login. (eg. user1@thapar.edu) This can easily be configured for any specific domain name.
+* Google Oauth Authentication service.
+* Mailing notifications using Nodemailer.
+* Dark theme frontend.
 
 # User Features
 * Can register an account.
@@ -30,6 +34,7 @@ Winger is a social media platform that offers a unique experience offering a com
 * Can like comments.
 * Can chat with other users.
 * Can view other users profile.
+* Can chat with other users.
 
 # Technologies
 
